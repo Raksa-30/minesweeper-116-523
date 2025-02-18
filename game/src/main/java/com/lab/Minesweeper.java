@@ -30,6 +30,23 @@ public class Minesweeper {
 
     void displayField() {
         // Task 1: Display the mine field to terminal
+        for(int i=0; i<fieldX; i++){
+            for(int j=0; j <fieldY; j++){
+                if ((j+1)%9!=0) {
+                    if (cells[i][j] == 0) {
+                        System.out.print(SAFE_CELL);
+                    } else {
+                        System.out.print(MINE_CELL);
+                    }
+                } else {
+                    if (cells[i][j] == 0) {
+                        System.out.println(SAFE_CELL);
+                    } else {
+                        System.out.println(MINE_CELL);
+                    }
+                }
+            }
+        }
     }
     void setMineCell(int x, int y) {
         cells[x][y] = IS_MINE;
@@ -39,6 +56,6 @@ public class Minesweeper {
         InputStream is = getClass().getClassLoader().getResourceAsStream(mineFieldFile);
         
         // Task 2: Using `java.util.Scanner` to load mine field from the input stream named, `is`
-
+        //
     }
 }
