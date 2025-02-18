@@ -26,8 +26,8 @@ public class App {
         // Design the menu by yourself.
         //ทำอะไรเพิ่มเติม 
                 
-        Minesweeper game = initMineField();
-        // Minesweeper game = initMineFieldFromFile("minefield/minefield01.txt");
+        //Minesweeper game = initMineField();
+        Minesweeper game = initMineFieldFromFile("minefield/minefield01.txt");
         game.displayField();
     }    
 }

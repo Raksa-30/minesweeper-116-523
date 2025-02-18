@@ -1,6 +1,7 @@
 package com.lab;
 
 import java.util.Scanner;
+import java.io.IOException;
 import java.io.InputStream;
 
 public class Minesweeper {
@@ -56,6 +57,19 @@ public class Minesweeper {
         InputStream is = getClass().getClassLoader().getResourceAsStream(mineFieldFile);
         
         // Task 2: Using `java.util.Scanner` to load mine field from the input stream named, `is`
-        //
+        Scanner sc = new Scanner(is);
+        fieldX = sc.nextInt();
+        fieldY = sc.nextInt();
+        sc.next();
+        int i = 0;
+        while (sc.hasNextLine()) {
+            String line = sc.nextLine();
+            int j = 0;
+            for (char cell : line.toCharArray()) {
+                cells[i][j] = cell;
+                j++;
+            }
+            i++;
+        }
     }
 }
