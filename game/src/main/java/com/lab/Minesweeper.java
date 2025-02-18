@@ -60,13 +60,18 @@ public class Minesweeper {
         Scanner sc = new Scanner(is);
         fieldX = sc.nextInt();
         fieldY = sc.nextInt();
-        sc.next();
+        sc.nextLine();
+        cells = new int[fieldX][fieldY];
         int i = 0;
         while (sc.hasNextLine()) {
             String line = sc.nextLine();
             int j = 0;
             for (char cell : line.toCharArray()) {
-                cells[i][j] = cell;
+                if (cell == '.') {
+                    cells[i][j] = IS_SAFE;
+                } else {
+                    cells[i][j] = IS_MINE;
+                }
                 j++;
             }
             i++;
