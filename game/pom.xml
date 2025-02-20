@@ -40,6 +40,12 @@
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
+    <!-- Our JavaFX dependency here, not inside dependencyManagement -->
+    <dependency>
+      <groupId>org.openjfx</groupId>
+      <artifactId>javafx-controls</artifactId>
+      <version>21</version>
+    </dependency>
   </dependencies>
 
   <build>
@@ -94,7 +100,16 @@
           <configuration>
             <mainClass>com.lab.App</mainClass>
           </configuration>
-      </plugin>  
+      </plugin>
+      <!-- Our JavaFX Maven plugin here, not inside pluginManagement -->
+      <plugin>
+        <groupId>org.openjfx</groupId>
+        <artifactId>javafx-maven-plugin</artifactId>
+        <version>0.0.8</version>
+        <configuration>
+          <mainClass>com.lab.App</mainClass>
+        </configuration>
+      </plugin>
     </plugins>
     <resources>
         <resource>
